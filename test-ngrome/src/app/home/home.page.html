@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-input [(ngModel)]="my_model"></ion-input>
+  
+  <ion-button shape="round" color="primary" fill="outline" (click)="pressed()">
+    press
+  </ion-button>
+
+  <p [innerHTML]="my_model"></p>
+</ion-content>
