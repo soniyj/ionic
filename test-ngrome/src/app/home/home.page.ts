@@ -8,16 +8,21 @@ import { NgRomeService } from './ngrome.service';
 })
 export class HomePage {
 
-  private my_model: string = '';
+  private toShow: boolean = false;
+  private myModel: string = '';
+  private myName: string = '';
 
   constructor(private ngrome: NgRomeService) {
     
   }
 
   pressed() {
-    this.ngrome.setString(this.my_model);
+    this.ngrome.setString(this.myModel);
     console.log(this.ngrome.getString());
-    this.my_model = 'You are ' + this.my_model;
+    if (this.myModel.length > 0) {
+      this.toShow = true;
+      this.myName = 'You are ' + this.ngrome.getString();
+    }
   }
 
 }
